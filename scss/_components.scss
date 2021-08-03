@@ -1,0 +1,124 @@
+@use "./base" as *;
+
+.logo{
+    font-size: 2.2em;
+    vertical-align: middle;
+}
+
+.toggle{
+    display: grid;
+    grid-template-columns: 1fr  1fr;
+    column-gap: 8%;
+    justify-items: center;
+    align-items: center;
+
+    &-name{
+        align-self: end; 
+        text-transform: uppercase;
+        font-size: .8rem;
+        letter-spacing: .1rem;
+        margin: auto auto 4%;
+    }
+
+    &-switch{
+        @include relativeContainer;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr  1fr;
+        justify-items: center;
+        align-items: center;
+
+        &-labels{
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            justify-items: center;
+            align-items: center;
+            font-size: .7em;
+        }
+    
+        &-lane{
+            display: flex;
+            align-content: center;
+            width: 100%;
+            padding: 5% 8%;
+            border-radius: 10vh;
+            .toggle-switch-knob{
+                width: 1rem;
+                height: 1rem;
+                border: none;
+                border-radius: 50%;
+                outline: none;
+               
+            }
+        }
+    }
+}
+
+.screen{
+    display: flex;
+    padding: 8% 6% 6%;
+    border-radius: .7em;
+    align-content: center;
+    justify-content: start;
+    margin-bottom: 8%;
+    overflow: hidden;
+    .result{
+        font-size: 1.8rem;
+        margin: auto 0 auto auto;
+    }
+}
+
+.keypad{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 4% 3%;
+    padding: 7%;
+    border-radius: 1em;
+    .btn{
+        border-radius: .2em;
+        border: none;
+        font-size: 1.8em;
+        text-transform: uppercase;
+        outline: none;
+
+        &.equal-btn{
+            grid-column: 3 / span 2;
+        }
+        &.reset-btn{
+            grid-column: 1 / span 2;
+        }
+
+        &.alt-key-bg, &.equal-bg{
+            font-size: 1rem;
+        }
+    }
+
+}
+
+.theme-1{
+    .toggle-switch-knob{
+        margin: auto auto auto 0;
+    }
+}
+
+.theme-2 {
+    .toggle-switch-knob{
+        margin: auto;
+    }
+}
+
+.theme-3 {
+    .toggle-switch-knob {
+        margin: auto 0 auto auto;
+    }
+}
+
+// default frontend mentor attribution styles
+// .attribution { 
+//     font-size: 11px; text-align: center; 
+// }
+// .attribution a { 
+//     color: hsl(228, 45%, 44%); 
+// }

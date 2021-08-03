@@ -1,0 +1,108 @@
+$themes: (
+    "theme-1": (
+        "bg-color": (
+            "main-bg": hsl(222, 26%, 31%),
+            "toggle-bg": hsl(223, 31%, 20%),
+            "screen-bg": hsl(224, 36%, 15%),
+            "key-bg": hsl(30, 25%, 89%),
+            "alt-key-bg": hsl(225, 21%, 49%),
+            "equal-bg": hsl(6, 63%, 50%)
+        ),
+        "text-color": (
+            "alt-text": hsl(0, 0%, 100%),
+            "key-text": hsl(221, 14%, 31%),
+            "result-text": hsl(0, 0%, 100%),
+            "equal-text": hsl(0, 0%, 100%)
+        ),
+        "shadow-color": (
+            "key-shadow": hsl(28, 16%, 65%),
+            "alt-key-shadow": hsl(224, 28%, 35%),
+            "equal-shadow": hsl(6, 70%, 34%)
+        )
+    ),
+    "theme-2": (
+        "bg-color": (
+            "main-bg": hsl(0, 0%, 90%),
+            "toggle-bg": hsl(0, 5%, 81%),
+            "screen-bg": hsl(0, 0%, 93%),
+            "key-bg": hsl(45, 7%, 89%),
+            "alt-key-bg": hsl(185, 42%, 37%),
+            "equal-bg": hsl(25, 98%, 40%)
+        ),
+        "text-color": (
+            "alt-text": hsl(0, 0%, 100%),
+            "key-text": hsl(60, 10%, 19%),
+            "result-text": hsl(60, 10%, 19%),
+            "equal-text": hsl(0, 0%, 100%)
+        ),
+        "shadow-color": (
+            "key-shadow": hsl(35, 11%, 61%),
+            "alt-key-shadow": hsl(185, 58%, 25%),
+            "equal-shadow": hsl(25, 99%, 27%)
+        )
+    ),
+    "theme-3": (
+        "bg-color": (
+            "main-bg": hsl(268, 75%, 9%),
+            "toggle-bg": hsl(268, 71%, 12%),
+            "screen-bg": hsl(268, 71%, 12%),
+            "key-bg": hsl(268, 47%, 21%),
+            "alt-key-bg": hsl(281, 89%, 26%),
+            "equal-bg": hsl(176, 100%, 44%)
+        ),
+        "text-color": (
+            "alt-text": hsl(0, 0%, 100%),
+            "key-text": hsl(52, 100%, 62%),
+            "equal-text": hsl(198, 20%, 13%),
+            "result-text": hsl(52, 100%, 62%),
+        ),
+        "shadow-color": (
+            "key-shadow": hsl(290, 70%, 36%),
+            "alt-key-shadow": hsl(285, 91%, 52%),
+            "equal-shadow": hsl(177, 92%, 70%)
+        )
+    )
+);
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Spartan', sans-serif;
+}
+
+// create theme stuff
+@each $themeName, $theme in $themes{
+    @each $colorGrp, $colors in $theme{
+        @if $colorGrp == "bg-color" {
+            @each $colorName, $color in $colors{
+                @if $colorName == "main-bg" {
+                    .#{$themeName}{
+                        background-color: $color;
+                    }
+                } @else {
+                    .#{$themeName} .#{$colorName}{
+                        background-color: $color;
+                    }
+                }
+            }
+        } @else if $colorGrp == "text-color" {
+            @each $colorName, $color in $colors{
+                .#{$themeName} .#{$colorName}{
+                    color: $color;
+                }
+            }
+        } @else if $colorGrp == "shadow-color" {
+            @each $colorName, $color in $colors{
+                .#{$themeName} .#{$colorName}{
+                    box-shadow: 0 .3rem 0 0 $color;
+                }
+            }
+        }
+    }
+}
+
+@mixin relativeContainer {
+    position: relative;
+    width: 100%;
+}

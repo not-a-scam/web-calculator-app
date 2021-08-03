@@ -1,0 +1,279 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Spartan", sans-serif;
+}
+
+.theme-1 {
+  background-color: #3a4764;
+}
+
+.theme-1 .toggle-bg {
+  background-color: #232c43;
+}
+
+.theme-1 .screen-bg {
+  background-color: #182034;
+}
+
+.theme-1 .key-bg {
+  background-color: #eae3dc;
+}
+
+.theme-1 .alt-key-bg {
+  background-color: #637097;
+}
+
+.theme-1 .equal-bg {
+  background-color: #d03f2f;
+}
+
+.theme-1 .alt-text {
+  color: white;
+}
+
+.theme-1 .key-text {
+  color: #444b5a;
+}
+
+.theme-1 .result-text {
+  color: white;
+}
+
+.theme-1 .equal-text {
+  color: white;
+}
+
+.theme-1 .key-shadow {
+  box-shadow: 0 0.3rem 0 0 #b4a597;
+}
+
+.theme-1 .alt-key-shadow {
+  box-shadow: 0 0.3rem 0 0 #404e72;
+}
+
+.theme-1 .equal-shadow {
+  box-shadow: 0 0.3rem 0 0 #93261a;
+}
+
+.theme-2 {
+  background-color: #e6e6e6;
+}
+
+.theme-2 .toggle-bg {
+  background-color: #d1cccc;
+}
+
+.theme-2 .screen-bg {
+  background-color: #ededed;
+}
+
+.theme-2 .key-bg {
+  background-color: #e5e4e1;
+}
+
+.theme-2 .alt-key-bg {
+  background-color: #377f86;
+}
+
+.theme-2 .equal-bg {
+  background-color: #ca5502;
+}
+
+.theme-2 .alt-text {
+  color: white;
+}
+
+.theme-2 .key-text {
+  color: #35352c;
+}
+
+.theme-2 .result-text {
+  color: #35352c;
+}
+
+.theme-2 .equal-text {
+  color: white;
+}
+
+.theme-2 .key-shadow {
+  box-shadow: 0 0.3rem 0 0 #a69d91;
+}
+
+.theme-2 .alt-key-shadow {
+  box-shadow: 0 0.3rem 0 0 #1b5f65;
+}
+
+.theme-2 .equal-shadow {
+  box-shadow: 0 0.3rem 0 0 #893901;
+}
+
+.theme-3 {
+  background-color: #160628;
+}
+
+.theme-3 .toggle-bg {
+  background-color: #1d0934;
+}
+
+.theme-3 .screen-bg {
+  background-color: #1d0934;
+}
+
+.theme-3 .key-bg {
+  background-color: #341c4f;
+}
+
+.theme-3 .alt-key-bg {
+  background-color: #58077d;
+}
+
+.theme-3 .equal-bg {
+  background-color: #00e0d1;
+}
+
+.theme-3 .alt-text {
+  color: white;
+}
+
+.theme-3 .key-text {
+  color: #ffe53d;
+}
+
+.theme-3 .equal-text {
+  color: #1b2428;
+}
+
+.theme-3 .result-text {
+  color: #ffe53d;
+}
+
+.theme-3 .key-shadow {
+  box-shadow: 0 0.3rem 0 0 #871c9c;
+}
+
+.theme-3 .alt-key-shadow {
+  box-shadow: 0 0.3rem 0 0 #bc15f4;
+}
+
+.theme-3 .equal-shadow {
+  box-shadow: 0 0.3rem 0 0 #6cf9f2;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 1fr 2fr 8fr;
+  height: 100vh;
+  padding: 8% 7%;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin-bottom: 9%;
+}
+
+.logo {
+  font-size: 2.2em;
+  vertical-align: middle;
+}
+
+.toggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 8%;
+  justify-items: center;
+  align-items: center;
+}
+.toggle-name {
+  align-self: end;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+  margin: auto auto 4%;
+}
+.toggle-switch {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
+.toggle-switch-labels {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  font-size: 0.7em;
+}
+.toggle-switch-lane {
+  display: flex;
+  align-content: center;
+  width: 100%;
+  padding: 5% 8%;
+  border-radius: 10vh;
+}
+.toggle-switch-lane .toggle-switch-knob {
+  width: 1rem;
+  height: 1rem;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+}
+
+.screen {
+  display: flex;
+  padding: 8% 6% 6%;
+  border-radius: 0.7em;
+  align-content: center;
+  justify-content: start;
+  margin-bottom: 8%;
+  overflow: hidden;
+}
+.screen .result {
+  font-size: 1.8rem;
+  margin: auto 0 auto auto;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 4% 3%;
+  padding: 7%;
+  border-radius: 1em;
+}
+.keypad .btn {
+  border-radius: 0.2em;
+  border: none;
+  font-size: 1.8em;
+  text-transform: uppercase;
+  outline: none;
+}
+.keypad .btn.equal-btn {
+  grid-column: 3/span 2;
+}
+.keypad .btn.reset-btn {
+  grid-column: 1/span 2;
+}
+.keypad .btn.alt-key-bg, .keypad .btn.equal-bg {
+  font-size: 1rem;
+}
+
+.theme-1 .toggle-switch-knob {
+  margin: auto auto auto 0;
+}
+
+.theme-2 .toggle-switch-knob {
+  margin: auto;
+}
+
+.theme-3 .toggle-switch-knob {
+  margin: auto 0 auto auto;
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,14 @@
+@use "./base" as *;
+
+.container{
+    display: grid;
+    grid-template-rows: 1fr 2fr 8fr;
+    height: 100vh;
+    padding: 8% 7%;
+}
+
+.header{
+    display: grid;
+    grid-template-columns: 50%  50%;
+    margin-bottom: 9%;
+}
