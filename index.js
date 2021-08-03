@@ -115,10 +115,12 @@ for(let i = 0; i < keys.length; i++){
                 if (calculations.secondNo === ""){
                     result.textContent = keys[i].value;
                 } else {
-                    if (parseFloat(result.textContent) !== 0){
-                        result.textContent += keys[i].value;
-                    } else {
-                        result.textContent = keys[i].value;
+                    if (result.textContent.length < 12){
+                        if (parseFloat(result.textContent) !== 0){
+                            result.textContent += keys[i].value;
+                        } else {
+                            result.textContent = keys[i].value;
+                        }
                     }
                 }
                 formatNumber();
