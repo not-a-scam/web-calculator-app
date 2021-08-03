@@ -64,6 +64,14 @@ $themes: (
     )
 );
 
+$laptop: 1200px;
+
+@mixin laptop {
+    @media (min-width: $laptop) {
+        @content
+    }
+}
+
 * {
     box-sizing: border-box;
     padding: 0;

@@ -167,6 +167,12 @@
   height: 100vh;
   padding: 8% 7%;
 }
+@media (min-width: 1200px) {
+  .container {
+    grid-template-rows: 1fr 3fr 8fr;
+    padding: 6% 35%;
+  }
+}
 
 .header {
   display: grid;
