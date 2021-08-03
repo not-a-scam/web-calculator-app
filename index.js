@@ -136,10 +136,12 @@ for(let i = 0; i < operators.length; i++){
     operators[i].addEventListener("click", () => {
         if (calculations.operator === ""){
             calculations.operator = operators[i].value;
-        } else {
+        } else if(calculations.secondNo !== ""){
             eval();
             calculations.operator = operators[i].value;
             console.log(calculations);
+        } else {
+            reset();
         }
     });
 }
